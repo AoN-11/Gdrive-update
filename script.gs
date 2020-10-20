@@ -41,7 +41,7 @@ function getFiles(dir, notify_files){
     var file = files.next();
     var file_createdate = file.getDateCreated();
     var file_editdate = file.getLastUpdated();
-    // 1時間以内に作成か編集があったかを確認
+    // 30分以内に作成か編集があったかを確認
     var time_diff0 = (now.getTime() - file_createdate.getTime()) / (60 * 1000);
     var time_diff1 = (now.getTime() - file_editdate.getTime()) / (60 * 1000);
     if (time_diff0 < INTERVAL_MINUTE || time_diff1 < INTERVAL_MINUTE) {
